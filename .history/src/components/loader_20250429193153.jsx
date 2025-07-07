@@ -1,0 +1,6 @@
+const loader = () =>{
+    return(
+        <h1>Hi</h1>
+    )
+}
+export default loader;

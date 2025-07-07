@@ -1,0 +1,11 @@
+import React from 'react'
+
+function Search() {
+  return (
+    <div className='w-40 bg-white h-6 rounded-xl'>
+      
+    </div>
+  )
+}
+
+export default Search

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import 'pixel-retroui/dist/index.css';
+
+
+.title,.skill-name,.exp-title,.exp-desc,.exp-resp{
+  font-family: "Press Start 2P", system-ui;
+
+}
+
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .skills-grid {
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  }
+}

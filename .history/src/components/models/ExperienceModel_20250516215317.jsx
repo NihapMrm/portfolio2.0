@@ -1,0 +1,20 @@
+import React, { useState } from 'react'
+import Edge from '../edge';
+
+const ExperienceModel =({onClose}) =>{
+    
+    const content = (
+        <section className="bg-white py-12 px-4 md:px-8 lg:px-16" id="experience">
+          <h1>Experience</h1>
+        </section>
+      );
+      
+    return(
+        <>
+        
+        <Edge slug={"experience"} content={content}/>
+        </>
+    )
+}
+
+export default ExperienceModel;
