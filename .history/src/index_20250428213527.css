@@ -1,8 +1,0 @@
-@font-face {
-  font-family: "Segoe-ui";
-  src: url("./assets/fonts/Segoe%20UI.woff") format("woff");
-}
-
-:root {
-  font-family: "Segoe-ui", sans-serif;
-}
