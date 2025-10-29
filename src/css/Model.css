@@ -2,7 +2,7 @@
 @import 'pixel-retroui/dist/index.css';
 
 
-.title,.skill-name,.exp-title,.exp-desc,.exp-resp{
+.title,.skill-name,.exp-title,.exp-desc,.exp-resp,.edu-title, .edu-degree, .edu-year{
   font-family: "Press Start 2P", system-ui;
 
 }

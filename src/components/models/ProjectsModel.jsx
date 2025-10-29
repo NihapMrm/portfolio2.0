@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
 import Edge from '../edge';
+import FileManager from '../FileManager';
 
 const ProjectsModel =({onClose}) =>{
   const [isMaximized, setIsMaximized] = useState(true);
   const handleRestore = () => setIsMaximized(prev => !prev);
     const content = (
-        <section className="bg-white py-12 px-4 md:px-8 lg:px-16 text-black" id="projects">
-          <h1>Projects</h1>
+        <section className="" id="projects">
         </section>
       );
       
     return(
         <>
 
-        <Edge slug={"projects"} content={content} onClose={onClose} isMaximized={isMaximized} onRestore={handleRestore} />
+        <FileManager slug={"projects"} content={content} onClose={onClose} isMaximized={isMaximized} onRestore={handleRestore} />
         </>
     )
 }
