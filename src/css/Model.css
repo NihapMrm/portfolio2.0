@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import 'pixel-retroui/dist/index.css';
 
 
-.title,.skill-name,.exp-title,.exp-desc,.exp-resp,.edu-title, .edu-degree, .edu-year{
+.title,.exp-title,.exp-desc,.exp-resp,.edu-title, .edu-degree, .edu-year{
   font-family: "Press Start 2P", system-ui;
-
 }
 
 
@@ -20,3 +20,1450 @@
     grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   }
 }
+
+/* ============================================ */
+/* Microsoft Fluent Design - Skills Section */
+/* ============================================ */
+
+.fluent-skills-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 50%, #f0f4f8 100%);
+  padding: 4rem 2rem;
+  overflow-y: auto;
+  position: relative;
+}
+
+.fluent-skills-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.fluent-spotlight {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(99, 102, 241, 0.12),
+    transparent 45%
+  );
+  filter: blur(40px);
+  opacity: 0.85;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fluent-skills-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.fluent-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.fluent-kicker {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #0078D4;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+
+.fluent-skills-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+  background: linear-gradient(135deg, #0078D4 0%, #6366F1 50%, #A855F7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.fluent-subtitle {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1.05rem;
+  color: #4a5568;
+  max-width: 540px;
+  margin: 0;
+}
+
+.fluent-legend {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #4a5568;
+  font-weight: 600;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.4rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.legend-advanced { background: linear-gradient(135deg, #0078D4, #38BDF8); }
+.legend-intermediate { background: linear-gradient(135deg, #6366F1, #A855F7); }
+.legend-beginner { background: linear-gradient(135deg, #22C55E, #4ADE80); }
+
+.fluent-skill-flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-auto-rows: minmax(180px, auto);
+  gap: 1.5rem;
+  padding: 1.25rem;
+  position: relative;
+  isolation: isolate;
+  grid-auto-flow: dense;
+  perspective: 1200px;
+}
+
+/* ============================================ */
+/* Fluent Experience Timeline */
+/* ============================================ */
+
+.exp-fluent-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fb 0%, #edf1f7 50%, #f4f7fb 100%);
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.exp-spotlight {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    520px circle at var(--exp-mouse-x, 50%) var(--exp-mouse-y, 50%),
+    rgba(99, 102, 241, 0.12),
+    rgba(56, 189, 248, 0.08),
+    transparent 45%
+  );
+  filter: blur(40px);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.exp-fluent-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2.75rem;
+}
+
+.exp-badges {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.exp-badge {
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0f172a;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8), 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.exp-timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.exp-rail {
+  position: absolute;
+  left: 28px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, #c7d2fe 0%, #a855f7 50%, #22c55e 100%);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.exp-rail-glow {
+  position: absolute;
+  left: 16px;
+  top: 0;
+  width: 26px;
+  height: 100%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 60%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.exp-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  z-index: 1;
+}
+
+.exp-marker {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  position: relative;
+}
+
+.exp-marker::after {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 18px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent 70%);
+  opacity: 0.45;
+  filter: blur(12px);
+}
+
+.exp-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 20px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.exp-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0));
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.exp-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--exp-gradient, linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(168, 85, 247, 0.08)));
+  opacity: 0.6;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.exp-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 24px 70px rgba(99, 102, 241, 0.18),
+    0 12px 30px rgba(0, 0, 0, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+.exp-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.exp-period {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #4b5563;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0 0 0.25rem;
+}
+
+.exp-role {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.exp-company {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #475569;
+  margin: 0.1rem 0 0;
+  font-weight: 500;
+}
+
+.exp-chip {
+  padding: 0.4rem 0.9rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: #2563eb;
+  font-weight: 700;
+  font-size: 0.8rem;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+.exp-summary {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #334155;
+  line-height: 1.6;
+  margin: 1rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.exp-achievements {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: grid;
+  gap: 0.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.exp-achievements li {
+  padding-left: 1.4rem;
+  position: relative;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.exp-achievements li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #6366f1;
+  font-weight: 900;
+}
+
+.exp-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.exp-tag {
+  padding: 0.4rem 0.85rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 0.85rem;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+/* Experience Responsive */
+@media (max-width: 1024px) {
+  .exp-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .exp-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-item {
+    grid-template-columns: 48px 1fr;
+  }
+
+  .exp-marker {
+    width: 48px;
+    height: 48px;
+  }
+
+  .exp-rail,
+  .exp-rail-glow {
+    left: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .exp-fluent-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .exp-item {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .exp-marker {
+    display: none;
+  }
+
+  .exp-rail,
+  .exp-rail-glow {
+    display: none;
+  }
+
+  .exp-card {
+    padding: 1.25rem;
+  }
+
+  .exp-role {
+    font-size: 1.1rem;
+  }
+
+  .exp-summary {
+    font-size: 0.98rem;
+  }
+}
+
+/* ============================================ */
+/* Fluent Education Grid */
+/* ============================================ */
+
+.edu-fluent-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f6f8fb 0%, #eef3f9 50%, #f7f9fc 100%);
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.edu-spotlight {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    520px circle at var(--edu-mouse-x, 50%) var(--edu-mouse-y, 50%),
+    rgba(99, 102, 241, 0.12),
+    rgba(34, 197, 94, 0.08),
+    transparent 45%
+  );
+  filter: blur(38px);
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.35s ease;
+}
+
+.edu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.edu-badges {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.edu-badge {
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f172a;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6));
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.92), 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.edu-card {
+  position: relative;
+  padding: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+  border-radius: 24px;
+  overflow: hidden;
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: pointer;
+}
+
+.edu-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 2px;
+  background: var(--edu-gradient, linear-gradient(135deg, #0078D4, #6366F1, #A855F7));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.7;
+  transition: opacity 0.4s ease;
+}
+
+.edu-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), transparent 50%, rgba(255, 255, 255, 0.2));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.edu-card-bg {
+  position: absolute;
+  inset: -20%;
+  background: var(--edu-gradient, linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(34, 197, 94, 0.1)));
+  opacity: 0.5;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.4s ease, filter 0.4s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow:
+    0 32px 80px rgba(99, 102, 241, 0.25),
+    0 16px 40px rgba(0, 0, 0, 0.12),
+    inset 0 2px 4px rgba(255, 255, 255, 0.9);
+}
+
+.edu-card:hover::before {
+  opacity: 1;
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+}
+
+.edu-card:hover::after {
+  opacity: 1;
+}
+
+.edu-card:hover .edu-card-bg {
+  opacity: 0.7;
+  filter: blur(80px);
+}
+
+.edu-card:active {
+  transform: translateY(-8px) scale(0.98);
+}
+
+.edu-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  position: relative;
+  z-index: 1;
+  align-items: flex-start;
+  padding: 1.75rem 1.75rem 0.5rem;
+}
+
+.edu-year-chip {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(168, 85, 247, 0.08));
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  color: #6366f1;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1);
+  transition: all 0.3s ease;
+}
+
+.edu-card:hover .edu-year-chip {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.18), rgba(168, 85, 247, 0.12));
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.edu-title-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0.5rem 0 0.2rem;
+  line-height: 1.3;
+  transition: all 0.3s ease;
+}
+
+.edu-card:hover .edu-title-text {
+  background: linear-gradient(135deg, #0078D4 0%, #6366F1 50%, #A855F7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.edu-degree-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #475569;
+  font-weight: 600;
+  margin: 0;
+}
+
+.edu-location {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #64748b;
+  margin: 0.15rem 0 0;
+  font-weight: 500;
+}
+
+.edu-headline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.edu-focus-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 1rem 1.75rem 1.75rem;
+}
+
+.edu-focus-chip {
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.edu-card:hover .edu-focus-chip {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8));
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.edu-description {
+  position: relative;
+  z-index: 1;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0 1.75rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1024px) {
+  .edu-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .edu-fluent-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .edu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .edu-title-text {
+    font-size: 1.05rem;
+  }
+
+  .edu-focus {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .edu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .edu-card {
+    padding: 1.15rem;
+  }
+
+  .edu-title-text {
+    font-size: 1rem;
+  }
+}
+
+/* ============================================ */
+/* Fluent Contact Section */
+/* ============================================ */
+
+.contact-fluent-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f7f8fb 0%, #eef2f7 50%, #f7f9fb 100%);
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-spotlight {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    540px circle at var(--contact-mouse-x, 50%) var(--contact-mouse-y, 50%),
+    rgba(99, 102, 241, 0.12),
+    rgba(14, 165, 233, 0.08),
+    transparent 45%
+  );
+  filter: blur(42px);
+  opacity: 0.85;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-badges {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.contact-badge {
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f172a;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6));
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.92), 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.contact-card {
+  position: relative;
+  padding: 1.3rem 1.1rem;
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 16px 46px rgba(0, 0, 0, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  overflow: hidden;
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  transform-style: preserve-3d;
+  will-change: transform;
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-card-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--contact-gradient, linear-gradient(135deg, rgba(99, 102, 241, 0.16), rgba(14, 165, 233, 0.12)));
+  opacity: 0.7;
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-chip {
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #0f172a;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+.contact-hint {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.contact-value {
+  position: relative;
+  z-index: 1;
+  margin: 0.75rem 0 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.contact-cta {
+  position: relative;
+  padding: 1.6rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 18px 52px rgba(0, 0, 0, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  overflow: hidden;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.contact-cta-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.22), transparent 45%),
+    radial-gradient(circle at 80% 60%, rgba(14, 165, 233, 0.18), transparent 45%);
+  opacity: 0.7;
+  filter: blur(48px);
+  pointer-events: none;
+}
+
+.contact-cta h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 0.5rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.contact-cta p {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 1rem;
+  color: #334155;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+.contact-cta-btn {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366F1, #22D3EE);
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.25);
+}
+
+@media (max-width: 1024px) {
+  .contact-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-fluent-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .contact-cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .contact-cta {
+    padding: 1.3rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Glassmorphic Skill Card */
+.fluent-skill-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 20px;
+  padding: 2.25rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 8px 32px rgba(31, 38, 135, 0.07),
+    0 2px 8px rgba(0, 0, 0, 0.02),
+    inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.fluent-skill-card.variant-wide {
+  grid-column: span 2;
+}
+
+.fluent-skill-card.variant-tall {
+  grid-row: span 2;
+}
+
+.fluent-skill-card.variant-compact {
+  padding: 1.75rem 1.25rem;
+}
+
+.fluent-skill-card.variant-classic {
+  /* Default variant keeps base spacing */
+}
+
+/* Glow effect on hover */
+.fluent-card-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.fluent-skill-card:hover .fluent-card-glow {
+  opacity: 1;
+}
+
+/* Click ripple effect */
+.fluent-card-ripple {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: radial-gradient(circle at center, rgba(99, 102, 241, 0.3) 0%, transparent 60%);
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+}
+
+.fluent-card-clicked .fluent-card-ripple {
+  animation: ripple-effect 0.6s ease-out;
+}
+
+@keyframes ripple-effect {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+.fluent-skill-card:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 
+    0 20px 60px rgba(99, 102, 241, 0.15),
+    0 8px 24px rgba(0, 0, 0, 0.05),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+.fluent-skill-card:active {
+  transform: scale(0.98);
+}
+
+.fluent-card-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  height: 100%;
+}
+
+.fluent-card-meta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.fluent-level-chip {
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #0f172a;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4));
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.level-expert { color: #0EA5E9; }
+.level-advanced { color: #6366F1; }
+.level-intermediate { color: #22C55E; }
+.level-beginner { color: #EAB308; }
+
+/* Gradient Icon Wrapper */
+.skill-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+}
+
+.skill-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-icon-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  opacity: 0;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.fluent-skill-card:hover .skill-icon-gradient-overlay {
+  opacity: 0.2;
+}
+
+.fluent-skill-card:hover .skill-icon-image {
+  filter: brightness(1.1) drop-shadow(0 6px 16px rgba(0, 0, 0, 0.15));
+}
+
+/* Skill Name Typography */
+.fluent-skill-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2d3748;
+  text-align: center;
+  letter-spacing: 0.01em;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.fluent-skill-card:hover .fluent-skill-name {
+  color: #0078D4;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .fluent-skills-title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .fluent-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fluent-skill-flow {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .fluent-skills-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .fluent-skill-flow {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.1rem;
+  }
+
+  .fluent-skills-title {
+    font-size: 2rem;
+  }
+
+  .fluent-skill-card {
+    padding: 1.75rem 1rem;
+  }
+
+  .skill-icon-wrapper {
+    width: 64px;
+    height: 64px;
+  }
+
+  .fluent-skill-name {
+    font-size: 0.9rem;
+  }
+
+  .fluent-skill-card.variant-wide,
+  .fluent-skill-card.variant-tall {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .fluent-skill-flow {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .fluent-skill-card {
+    padding: 1.4rem 0.85rem;
+    border-radius: 16px;
+  }
+
+  .skill-icon-wrapper {
+    width: 56px;
+    height: 56px;
+  }
+
+  .fluent-skill-name {
+    font-size: 0.82rem;
+  }
+
+  .fluent-level-chip {
+    font-size: 0.7rem;
+  }
+}
+
+/* Accessibility */
+.fluent-skill-card:focus-visible {
+  outline: 2px solid #0078D4;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fluent-skill-card,
+  .skill-icon-gradient-overlay,
+  .skill-icon-image,
+  .fluent-skill-name,
+  .fluent-card-glow {
+    transition: none;
+  }
+}
+
+/* ============================================ */
+/* Expanded Skill Modal */
+/* ============================================ */
+
+.fluent-skill-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fluent-skill-modal {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border-radius: 24px;
+  max-width: 600px;
+  width: 100%;
+  padding: 3rem;
+  position: relative;
+  box-shadow: 
+    0 24px 80px rgba(0, 0, 0, 0.15),
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.fluent-modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fluent-modal-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
+.fluent-modal-close:active {
+  transform: scale(0.95);
+}
+
+.fluent-modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.fluent-modal-icon-large {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.15));
+}
+
+.modal-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  animation: modalIconFloat 3s ease-in-out infinite;
+}
+
+@keyframes modalIconFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.modal-icon-gradient {
+  position: absolute;
+  inset: -10px;
+  border-radius: 30px;
+  opacity: 0.3;
+  filter: blur(20px);
+  z-index: 1;
+  animation: gradientPulse 3s ease-in-out infinite;
+}
+
+@keyframes gradientPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+}
+
+.fluent-modal-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.fluent-skill-level {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 100px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6366F1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.fluent-modal-body {
+  text-align: center;
+}
+
+.fluent-modal-description {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #4a5568;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Modal Responsive */
+@media (max-width: 768px) {
+  .fluent-skill-modal-overlay {
+    padding: 1.5rem;
+  }
+  
+  .fluent-skill-modal {
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+  }
+  
+  .fluent-modal-icon-large {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .fluent-modal-title {
+    font-size: 1.75rem;
+  }
+  
+  .fluent-modal-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fluent-skill-modal {
+    padding: 2rem 1.5rem;
+  }
+  
+  .fluent-modal-icon-large {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .fluent-modal-title {
+    font-size: 1.5rem;
+  }
+  
+  .fluent-modal-description {
+    font-size: 0.9375rem;
+  }
+  
+  .fluent-skill-level {
+    font-size: 0.75rem;
+    padding: 0.4rem 1.2rem;
+  }
+}
+

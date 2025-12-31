@@ -17,6 +17,10 @@ const Edge = forwardRef(({ slug, content, onClose, isMaximized, onRestore }, ref
             if (isMaximized) {
                 setPosition({ x: 0, y: 0 });
             }
+            // Trigger window resize event to update Tailwind responsive classes
+            setTimeout(() => {
+                window.dispatchEvent(new Event('resize'));
+            }, 350); // Match transition duration
         }, [isMaximized]);
 
     return (
@@ -66,7 +70,7 @@ const Edge = forwardRef(({ slug, content, onClose, isMaximized, onRestore }, ref
 
                     <div className="bg-[#2e2e2e] w-full h-full rounded-full border flex items-center justify-start border-white border-opacity-20 gap-2 hover:bg-[#3b3b3b] transition-all">
                         <AiOutlineExclamationCircle className='bg-[#3b3b3b] bg-opacity-50 h-full rounded-full w-7 p-1 hover:bg-opacity-100' />
-                        <p className='text-base pb-[2px]'>nihap.me/{slug}</p>
+                        <p className='text-base pb-[2px]'>nihap.io/{slug}</p>
                     </div>
                     <div className="w-44 flex items-center justify-between gap-2">
                         <PiListStar className='bg-transparent flex w-10 h-full group active:scale-100 p-1 hover:bg-[#ffffff20] duration-300 rounded' />
